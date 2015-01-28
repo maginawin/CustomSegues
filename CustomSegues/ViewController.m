@@ -10,18 +10,22 @@
 
 @interface ViewController ()
 
+@property (nonatomic, weak) IBOutlet UILabel* msgLabel;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // 添加手势
+    UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showSecondViewController)];
+    swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.view addGestureRecognizer:swipeGestureRecognizer];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)showSecondViewController {
+    [self performSegueWithIdentifier:@"idFirstSegue" sender:self];    
 }
 
 @end

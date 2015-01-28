@@ -14,6 +14,12 @@
 		0803F8AC1A78D69D0069A51F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0803F8AB1A78D69D0069A51F /* Images.xcassets */; };
 		0803F8AF1A78D69D0069A51F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0803F8AD1A78D69D0069A51F /* LaunchScreen.xib */; };
 		0803F8BB1A78D69D0069A51F /* CustomSeguesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803F8BA1A78D69D0069A51F /* CustomSeguesTests.m */; };
+		0803F8C71A78D8A00069A51F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803F8C61A78D8A00069A51F /* SecondViewController.m */; };
+		0803F8CA1A78D8AD0069A51F /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803F8C91A78D8AD0069A51F /* ThirdViewController.m */; };
+		0803F8CE1A78D9EB0069A51F /* FirstCustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803F8CD1A78D9EB0069A51F /* FirstCustomSegue.m */; };
+		0803F8D11A78D9FB0069A51F /* FirstCustomSegueUnwind.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803F8D01A78D9FB0069A51F /* FirstCustomSegueUnwind.m */; };
+		0803F8D41A78DA0E0069A51F /* SecondCustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803F8D31A78DA0E0069A51F /* SecondCustomSegue.m */; };
+		0803F8D71A78DA290069A51F /* SecondCustomSegueUnwind.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803F8D61A78DA290069A51F /* SecondCustomSegueUnwind.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,18 @@
 		0803F8B41A78D69D0069A51F /* CustomSeguesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomSeguesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0803F8B91A78D69D0069A51F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0803F8BA1A78D69D0069A51F /* CustomSeguesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSeguesTests.m; sourceTree = "<group>"; };
+		0803F8C51A78D8A00069A51F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		0803F8C61A78D8A00069A51F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		0803F8C81A78D8AD0069A51F /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		0803F8C91A78D8AD0069A51F /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		0803F8CC1A78D9EB0069A51F /* FirstCustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstCustomSegue.h; sourceTree = "<group>"; };
+		0803F8CD1A78D9EB0069A51F /* FirstCustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstCustomSegue.m; sourceTree = "<group>"; };
+		0803F8CF1A78D9FB0069A51F /* FirstCustomSegueUnwind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstCustomSegueUnwind.h; sourceTree = "<group>"; };
+		0803F8D01A78D9FB0069A51F /* FirstCustomSegueUnwind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstCustomSegueUnwind.m; sourceTree = "<group>"; };
+		0803F8D21A78DA0E0069A51F /* SecondCustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondCustomSegue.h; sourceTree = "<group>"; };
+		0803F8D31A78DA0E0069A51F /* SecondCustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondCustomSegue.m; sourceTree = "<group>"; };
+		0803F8D51A78DA290069A51F /* SecondCustomSegueUnwind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondCustomSegueUnwind.h; sourceTree = "<group>"; };
+		0803F8D61A78DA290069A51F /* SecondCustomSegueUnwind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondCustomSegueUnwind.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +99,15 @@
 		0803F89D1A78D69D0069A51F /* CustomSegues */ = {
 			isa = PBXGroup;
 			children = (
+				0803F8CB1A78D9AB0069A51F /* MySegues */,
 				0803F8A21A78D69D0069A51F /* AppDelegate.h */,
 				0803F8A31A78D69D0069A51F /* AppDelegate.m */,
 				0803F8A51A78D69D0069A51F /* ViewController.h */,
 				0803F8A61A78D69D0069A51F /* ViewController.m */,
+				0803F8C51A78D8A00069A51F /* SecondViewController.h */,
+				0803F8C61A78D8A00069A51F /* SecondViewController.m */,
+				0803F8C81A78D8AD0069A51F /* ThirdViewController.h */,
+				0803F8C91A78D8AD0069A51F /* ThirdViewController.m */,
 				0803F8A81A78D69D0069A51F /* Main.storyboard */,
 				0803F8AB1A78D69D0069A51F /* Images.xcassets */,
 				0803F8AD1A78D69D0069A51F /* LaunchScreen.xib */,
@@ -117,6 +140,21 @@
 				0803F8B91A78D69D0069A51F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0803F8CB1A78D9AB0069A51F /* MySegues */ = {
+			isa = PBXGroup;
+			children = (
+				0803F8CC1A78D9EB0069A51F /* FirstCustomSegue.h */,
+				0803F8CD1A78D9EB0069A51F /* FirstCustomSegue.m */,
+				0803F8CF1A78D9FB0069A51F /* FirstCustomSegueUnwind.h */,
+				0803F8D01A78D9FB0069A51F /* FirstCustomSegueUnwind.m */,
+				0803F8D21A78DA0E0069A51F /* SecondCustomSegue.h */,
+				0803F8D31A78DA0E0069A51F /* SecondCustomSegue.m */,
+				0803F8D51A78DA290069A51F /* SecondCustomSegueUnwind.h */,
+				0803F8D61A78DA290069A51F /* SecondCustomSegueUnwind.m */,
+			);
+			name = MySegues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +257,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0803F8C71A78D8A00069A51F /* SecondViewController.m in Sources */,
+				0803F8D71A78DA290069A51F /* SecondCustomSegueUnwind.m in Sources */,
+				0803F8CA1A78D8AD0069A51F /* ThirdViewController.m in Sources */,
 				0803F8A71A78D69D0069A51F /* ViewController.m in Sources */,
 				0803F8A41A78D69D0069A51F /* AppDelegate.m in Sources */,
 				0803F8A11A78D69D0069A51F /* main.m in Sources */,
+				0803F8D11A78D9FB0069A51F /* FirstCustomSegueUnwind.m in Sources */,
+				0803F8D41A78DA0E0069A51F /* SecondCustomSegue.m in Sources */,
+				0803F8CE1A78D9EB0069A51F /* FirstCustomSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +388,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CustomSegues/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +399,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CustomSegues/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
