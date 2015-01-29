@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "FirstCustomSegueUnwind.h"
 #import "SecondViewController.h"
+#import "ThirdViewController.h"
+#import "SecondCustomSegueUnwind.h"
 
 @interface ViewController ()
 
@@ -41,6 +43,9 @@
     if ([identifier isEqualToString:@"idFirstSegueUnwindow"]) {
         FirstCustomSegueUnwind* unwindSegue = [FirstCustomSegueUnwind segueWithIdentifier:@"idFirstSegueUnwindow" source:fromViewController destination:toViewController performHandler:^ {}];
         return unwindSegue;
+    } else if ([identifier isEqualToString:@"idSecondSegueUnwind"]) {
+        SecondCustomSegueUnwind* unwindSegue = [SecondCustomSegueUnwind segueWithIdentifier:@"idSecondSegueUnwindow" source:fromViewController destination:toViewController performHandler:^ {}];
+        return unwindSegue;
     }
     return [super segueForUnwindingToViewController:toViewController fromViewController:fromViewController identifier:identifier];
 }
@@ -52,6 +57,10 @@
     [UIView animateWithDuration:1.0 animations:^ {
         self.view.backgroundColor = originalColor;
     }];
+}
+
+- (IBAction)showThirdViewController:(id)sender {
+    [self performSegueWithIdentifier:@"idSecondSegue" sender:self];
 }
 
 @end
