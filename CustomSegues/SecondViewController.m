@@ -8,10 +8,12 @@
 
 #import "SecondViewController.h"
 #import "FirstCustomSegueUnwind.h"
+#import "ViewController.h"
 
 @interface SecondViewController ()
 
 @property (nonatomic, weak) IBOutlet UILabel* msgLabel;
+
 
 @end
 
@@ -25,35 +27,24 @@
     [self.view addGestureRecognizer:swipeGestureRecognizer];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    _msgLabel.text = _message;
+}
+
+#pragma mark - Selector
+
 - (void)showFirstViewController {
-    NSLog(@"down");
-    [self performSegueWithIdentifier:@"idTest" sender:self];
+    [self performSegueWithIdentifier:@"idFirstSegueUnwind" sender:self];
 //    [self dismissViewControllerAnimated:YES completion:^ {}];
 }
 
-//
-//// 重载此方法, 此方法是 VC 提供的方法, 在解除转场执行的时候会自动调用这个方法, 实现是手动添加的
-//- (UIStoryboardSegue*)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
-//    NSLog(@"segue");
-//    if ([identifier  isEqual: @"idTest"]) {
-//        UIStoryboardSegue* unwindSegue = [FirstCustomSegueUnwind segueWithIdentifier:identifier source:fromViewController destination:toViewController performHandler:^ {}];
-//        NSLog(@"here");
-//        return unwindSegue;
-//    }
-//    NSLog(@"here2");
-//    return [super segueForUnwindingToViewController:toViewController fromViewController:fromViewController identifier:identifier];
-//}
-//
-//// 从 VC 连接到 Exit 的方法, 参数是 UIStoryboardSegue
-//- (IBAction)returnFromSegueAction:(UIStoryboardSegue*)sender {
-//    if ([sender.identifier isEqualToString:@"idTest"]) {
-//        UIColor* originalColor = [self.view backgroundColor];
-//        self.view.backgroundColor = [UIColor redColor];
-//        [UIView animateWithDuration:1.0 animations:^ {
-//            self.view.backgroundColor = originalColor;
-//        }];
-//        NSLog(@"hehe");
-//    }
-//    NSLog(@"hehe");
-//}
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"idFirstSegueUnwind"]) {
+        ViewController* vc = segue.destinationViewController;
+        vc.msgLabel.text = @"You just came back from the 2nd VC";
+    }
+}
+
 @end

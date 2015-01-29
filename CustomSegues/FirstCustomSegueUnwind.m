@@ -13,26 +13,38 @@
 - (void)perform {
     UIView* secondView = [self.sourceViewController view];
     UIView* firstView = [self.destinationViewController view];
-    NSInteger screenWidth = [UIScreen mainScreen].bounds.size.width;
     NSInteger screenHeight = [UIScreen mainScreen].bounds.size.height;
-    firstView.frame = CGRectMake(0, -screenHeight, screenWidth, screenHeight);
-    UIColor* tempColor = firstView.backgroundColor;
-    firstView.backgroundColor = [UIColor redColor];
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
     [window insertSubview:firstView aboveSubview:secondView];
-    
-    // Animate the transition
+    // Animate the transition.
     [UIView animateWithDuration:0.4 animations:^ {
         firstView.frame = CGRectOffset(firstView.frame, 0.0, screenHeight);
         secondView.frame = CGRectOffset(secondView.frame, 0.0, screenHeight);
     } completion:^(BOOL finished) {
-//        [self.sourceViewController dismissViewControllerAnimated:NO completion:nil];
-        [self.sourceViewController presentViewController:self.destinationViewController animated:NO completion:^ {
-            [UIView animateWithDuration:0.8 animations:^ {
-                firstView.backgroundColor = tempColor;
-            }];
-        }];
+        [self.sourceViewController dismissViewControllerAnimated:NO completion:nil];
     }];
+    
+    
+    // 这里是用 persentViewController 来代替 dismiss 的方法
+//    NSInteger screenWidth = [UIScreen mainScreen].bounds.size.width;
+//    firstView.frame = CGRectMake(0, -screenHeight, screenWidth, screenHeight);
+//    UIColor* tempColor = firstView.backgroundColor;
+//    firstView.backgroundColor = [UIColor redColor];
+//    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+//    [window insertSubview:firstView aboveSubview:secondView];
+//    
+//    // Animate the transition
+//    [UIView animateWithDuration:0.4 animations:^ {
+//        firstView.frame = CGRectOffset(firstView.frame, 0.0, screenHeight);
+//        secondView.frame = CGRectOffset(secondView.frame, 0.0, screenHeight);
+//    } completion:^(BOOL finished) {
+////        [self.sourceViewController dismissViewControllerAnimated:NO completion:nil];
+//        [self.sourceViewController presentViewController:self.destinationViewController animated:NO completion:^ {
+//            [UIView animateWithDuration:0.8 animations:^ {
+//                firstView.backgroundColor = tempColor;
+//            }];
+//        }];
+//    }];
 }
 
 @end
